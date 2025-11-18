@@ -10,35 +10,44 @@
     
     <!-- TailwindCSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
     
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
     
     <!-- Navigation Bar -->
-    <nav id="navbar" class="fixed top-0 w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm transition-all duration-300">
+    <nav id="navbar" class="fixed top-0 w-full z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-sm transition-all duration-300 border-b border-gray-200 dark:border-gray-800">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex-shrink-0">
-                    <a href="#home" class="text-xl font-bold text-gray-900 dark:text-white">ISV</a>
+                    <a href="#home" class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">ISV</a>
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#home" class="nav-link text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</a>
-                        <a href="#about" class="nav-link text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a>
-                        <a href="#skills" class="nav-link text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Skills</a>
-                        <a href="#projects" class="nav-link text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects</a>
-                        <a href="#experience" class="nav-link text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Experience</a>
-                        <a href="#contact" class="nav-link text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact</a>
+                        <a href="#home" class="nav-link text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">Home</a>
+                        <a href="#about" class="nav-link text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">About</a>
+                        <a href="#skills" class="nav-link text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">Skills</a>
+                        <a href="#projects" class="nav-link text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">Projects</a>
+                        <a href="#experience" class="nav-link text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">Experience</a>
+                        <a href="#contact" class="nav-link text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">Contact</a>
                     </div>
                 </div>
                 <div class="flex items-center space-x-4">
@@ -66,37 +75,74 @@
     </nav>
 
     <!-- Home Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center pt-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
-        <div class="container mx-auto max-w-7xl">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
+    <section id="home" class="min-h-screen flex items-center justify-center pt-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <!-- Animated Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"></div>
+        <div class="absolute inset-0">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+            <div class="absolute top-40 right-10 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+            <div class="absolute bottom-20 left-1/2 w-72 h-72 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+        </div>
+        
+        <div class="container mx-auto max-w-7xl relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div class="text-center md:text-left fade-in">
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 text-gray-900 dark:text-white">
-                        Indhu Sree Veerabahu
+                    <div class="mb-4">
+                        <span class="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-semibold mb-4">
+                            👋 Welcome to My Portfolio
+                        </span>
+                    </div>
+                    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold mb-4 text-gray-900 dark:text-white leading-tight">
+                        Hi, I'm <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Indhu Sree</span>
                     </h1>
-                    <h2 class="text-xl sm:text-2xl lg:text-3xl font-semibold mb-6 text-gray-700 dark:text-gray-300">
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-6 text-gray-700 dark:text-gray-300">
                         Software Developer | Java & .NET Full Stack Engineer
                     </h2>
-                    <div class="h-12 sm:h-16 mb-8">
-                        <p class="text-lg sm:text-xl lg:text-2xl text-gray-600 dark:text-gray-400">
-                            <span id="typing-text" class="font-medium"></span>
-                            <span class="typing-cursor">|</span>
+                    <div class="h-16 sm:h-20 mb-8 flex items-center justify-center md:justify-start">
+                        <p class="text-xl sm:text-2xl lg:text-3xl text-gray-600 dark:text-gray-400">
+                            I build with <span id="typing-text" class="font-bold text-blue-600 dark:text-blue-400"></span>
+                            <span class="typing-cursor text-blue-600 dark:text-blue-400">|</span>
                         </p>
                     </div>
+                    <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-xl">
+                        Crafting robust backend solutions with clean architecture, scalable APIs, and secure authentication systems.
+                    </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                        <a href="assets/resume.pdf" download class="btn-primary inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors shadow-lg">
+                        <a href="assets/resume.pdf" download class="btn-primary inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                             <i class="fas fa-download mr-2"></i>
                             Download Resume
                         </a>
-                        <a href="#projects" class="btn-secondary inline-flex items-center justify-center px-6 py-3 bg-transparent border-2 border-blue-600 text-blue-600 dark:text-blue-400 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-800 transition-colors">
+                        <a href="#projects" class="btn-secondary inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-blue-600 text-blue-600 dark:text-blue-400 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-800 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                             <i class="fas fa-code mr-2"></i>
                             View Projects
+                        </a>
+                    </div>
+                    <!-- Social Links -->
+                    <div class="flex gap-4 mt-8 justify-center md:justify-start">
+                        <a href="https://linkedin.com/in/indhusreev" target="_blank" rel="noopener noreferrer" class="w-12 h-12 flex items-center justify-center bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-blue-600 hover:text-white transition-all transform hover:scale-110">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/IndhuSreeVeerabahu" target="_blank" rel="noopener noreferrer" class="w-12 h-12 flex items-center justify-center bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-gray-900 hover:text-white transition-all transform hover:scale-110">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:indhusreev611@gmail.com" class="w-12 h-12 flex items-center justify-center bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-red-600 hover:text-white transition-all transform hover:scale-110">
+                            <i class="fas fa-envelope"></i>
                         </a>
                     </div>
                 </div>
                 <div class="flex justify-center md:justify-end fade-in-delay">
                     <div class="relative">
-                        <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full blur-2xl opacity-30 animate-pulse"></div>
-                        <img src="assets/profile.jpg" alt="Indhu Sree Veerabahu" class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full object-cover object-center object-top border-4 border-white dark:border-gray-700 shadow-2xl" style="object-position: center 25%;">
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+                        <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                            <img src="assets/profile.jpg" alt="Indhu Sree Veerabahu" class="w-full h-full object-cover object-center" style="object-position: center 25%;">
+                        </div>
+                        <!-- Floating badges -->
+                        <div class="absolute -top-4 -right-4 bg-white dark:bg-gray-800 rounded-full p-3 shadow-lg animate-bounce">
+                            <i class="fas fa-code text-2xl text-blue-600"></i>
+                        </div>
+                        <div class="absolute -bottom-4 -left-4 bg-white dark:bg-gray-800 rounded-full p-3 shadow-lg animate-bounce" style="animation-delay: 0.5s;">
+                            <i class="fas fa-rocket text-2xl text-purple-600"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -106,37 +152,60 @@
     <!-- About Section -->
     <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900">
         <div class="container mx-auto max-w-6xl">
-            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white">About Me</h2>
+            <h2 class="text-4xl sm:text-5xl font-bold text-center mb-4 text-gray-900 dark:text-white">
+                About <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Me</span>
+            </h2>
+            <p class="text-center text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
+                Passionate about building scalable backend systems and delivering exceptional software solutions
+            </p>
             <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="fade-in">
-                    <img src="assets/profile.jpg" alt="Profile" class="w-full max-w-md mx-auto rounded-lg shadow-xl">
+                <div class="fade-in" data-aos="fade-right">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-lg blur-2xl opacity-20"></div>
+                        <img src="assets/profile.jpg" alt="Profile" class="relative w-full max-w-md mx-auto rounded-lg shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                    </div>
                 </div>
-                <div class="fade-in-delay">
+                <div class="fade-in-delay" data-aos="fade-left">
                     <p class="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                        I am a Software Developer specializing in backend engineering using Java Spring Boot and .NET Core. I build secure, scalable REST APIs and manage database-driven applications with a strong emphasis on clean architecture and code quality. Passionate about problem solving, automation, and learning modern technologies to deliver real-world business impact.
+                        I am a <strong class="text-blue-600 dark:text-blue-400">Software Developer</strong> specializing in backend engineering using <strong class="text-blue-600 dark:text-blue-400">Java Spring Boot</strong> and <strong class="text-blue-600 dark:text-blue-400">.NET Core</strong>. I build secure, scalable REST APIs and manage database-driven applications with a strong emphasis on clean architecture and code quality. Passionate about problem solving, automation, and learning modern technologies to deliver real-world business impact.
                     </p>
                     <div class="space-y-4">
-                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Highlights</h3>
-                        <div class="space-y-3">
-                            <div class="flex items-start">
-                                <i class="fas fa-check-circle text-blue-600 dark:text-blue-400 mr-3 mt-1"></i>
-                                <span class="text-gray-700 dark:text-gray-300">Backend Architecture Design</span>
+                        <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-6">Core Expertise</h3>
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div class="flex items-start p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow">
+                                <i class="fas fa-check-circle text-blue-600 dark:text-blue-400 mr-3 mt-1 text-xl"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 dark:text-white">Backend Architecture Design</h4>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Scalable system design</p>
+                                </div>
                             </div>
-                            <div class="flex items-start">
-                                <i class="fas fa-check-circle text-blue-600 dark:text-blue-400 mr-3 mt-1"></i>
-                                <span class="text-gray-700 dark:text-gray-300">API Development (REST/JWT Authentication)</span>
+                            <div class="flex items-start p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow">
+                                <i class="fas fa-check-circle text-blue-600 dark:text-blue-400 mr-3 mt-1 text-xl"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 dark:text-white">API Development</h4>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">REST/JWT Authentication</p>
+                                </div>
                             </div>
-                            <div class="flex items-start">
-                                <i class="fas fa-check-circle text-blue-600 dark:text-blue-400 mr-3 mt-1"></i>
-                                <span class="text-gray-700 dark:text-gray-300">Database Modeling & Optimization</span>
+                            <div class="flex items-start p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow">
+                                <i class="fas fa-check-circle text-blue-600 dark:text-blue-400 mr-3 mt-1 text-xl"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 dark:text-white">Database Modeling</h4>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Optimization & Design</p>
+                                </div>
                             </div>
-                            <div class="flex items-start">
-                                <i class="fas fa-check-circle text-blue-600 dark:text-blue-400 mr-3 mt-1"></i>
-                                <span class="text-gray-700 dark:text-gray-300">Cross-Platform App Integration (Electron + Angular)</span>
+                            <div class="flex items-start p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow">
+                                <i class="fas fa-check-circle text-blue-600 dark:text-blue-400 mr-3 mt-1 text-xl"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 dark:text-white">Cross-Platform Integration</h4>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Electron + Angular</p>
+                                </div>
                             </div>
-                            <div class="flex items-start">
-                                <i class="fas fa-check-circle text-blue-600 dark:text-blue-400 mr-3 mt-1"></i>
-                                <span class="text-gray-700 dark:text-gray-300">Collaborative Development & Team Communication</span>
+                            <div class="flex items-start p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow sm:col-span-2">
+                                <i class="fas fa-check-circle text-blue-600 dark:text-blue-400 mr-3 mt-1 text-xl"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 dark:text-white">Collaborative Development</h4>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Team Communication & Agile Practices</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -146,123 +215,129 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800">
+    <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900">
         <div class="container mx-auto max-w-6xl">
-            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white">Technical Skills</h2>
+            <h2 class="text-4xl sm:text-5xl font-bold text-center mb-4 text-gray-900 dark:text-white">
+                Technical <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Skills</span>
+            </h2>
+            <p class="text-center text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
+                Technologies and tools I work with to build amazing applications
+            </p>
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Languages -->
-                <div class="skill-card bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                    <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
-                        <i class="fas fa-code text-blue-600 dark:text-blue-400 mr-2"></i>
+                <div class="skill-card bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all border border-gray-200 dark:border-gray-700" data-aos="fade-up">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white flex items-center">
+                        <i class="fas fa-code text-blue-600 dark:text-blue-400 mr-3 text-2xl"></i>
                         Languages
                     </h3>
-                    <div class="space-y-3">
+                    <div class="space-y-4">
                         <div class="skill-item">
-                            <div class="flex justify-between mb-1">
-                                <span class="text-gray-700 dark:text-gray-300">Java</span>
-                                <span class="text-gray-600 dark:text-gray-400">90%</span>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700 dark:text-gray-300 font-medium">Java</span>
+                                <span class="text-gray-600 dark:text-gray-400 font-semibold">90%</span>
                             </div>
-                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                                <div class="bg-blue-600 h-2 rounded-full" style="width: 90%"></div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 overflow-hidden">
+                                <div class="bg-gradient-to-r from-blue-600 to-blue-500 h-3 rounded-full transition-all duration-1000" style="width: 90%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <div class="flex justify-between mb-1">
-                                <span class="text-gray-700 dark:text-gray-300">C#</span>
-                                <span class="text-gray-600 dark:text-gray-400">85%</span>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700 dark:text-gray-300 font-medium">C#</span>
+                                <span class="text-gray-600 dark:text-gray-400 font-semibold">85%</span>
                             </div>
-                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                                <div class="bg-blue-600 h-2 rounded-full" style="width: 85%"></div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 overflow-hidden">
+                                <div class="bg-gradient-to-r from-purple-600 to-purple-500 h-3 rounded-full transition-all duration-1000" style="width: 85%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <div class="flex justify-between mb-1">
-                                <span class="text-gray-700 dark:text-gray-300">SQL</span>
-                                <span class="text-gray-600 dark:text-gray-400">88%</span>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700 dark:text-gray-300 font-medium">SQL</span>
+                                <span class="text-gray-600 dark:text-gray-400 font-semibold">88%</span>
                             </div>
-                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                                <div class="bg-blue-600 h-2 rounded-full" style="width: 88%"></div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 overflow-hidden">
+                                <div class="bg-gradient-to-r from-green-600 to-green-500 h-3 rounded-full transition-all duration-1000" style="width: 88%"></div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Frameworks / Tools -->
-                <div class="skill-card bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                    <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
-                        <i class="fas fa-tools text-blue-600 dark:text-blue-400 mr-2"></i>
+                <div class="skill-card bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all border border-gray-200 dark:border-gray-700" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white flex items-center">
+                        <i class="fas fa-tools text-blue-600 dark:text-blue-400 mr-3 text-2xl"></i>
                         Frameworks / Tools
                     </h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">Spring Boot</span>
-                        <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">ASP.NET Core</span>
-                        <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">Entity Framework</span>
-                        <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">Spring Security</span>
-                        <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">JWT</span>
-                        <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">REST API</span>
+                        <span class="px-3 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-lg text-sm font-medium hover:scale-110 transition-transform">Spring Boot</span>
+                        <span class="px-3 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-lg text-sm font-medium hover:scale-110 transition-transform">ASP.NET Core</span>
+                        <span class="px-3 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-lg text-sm font-medium hover:scale-110 transition-transform">Entity Framework</span>
+                        <span class="px-3 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-lg text-sm font-medium hover:scale-110 transition-transform">Spring Security</span>
+                        <span class="px-3 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-lg text-sm font-medium hover:scale-110 transition-transform">JWT</span>
+                        <span class="px-3 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-lg text-sm font-medium hover:scale-110 transition-transform">REST API</span>
                     </div>
                 </div>
 
                 <!-- Database -->
-                <div class="skill-card bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                    <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
-                        <i class="fas fa-database text-blue-600 dark:text-blue-400 mr-2"></i>
+                <div class="skill-card bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all border border-gray-200 dark:border-gray-700" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white flex items-center">
+                        <i class="fas fa-database text-blue-600 dark:text-blue-400 mr-3 text-2xl"></i>
                         Database
                     </h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">MySQL</span>
-                        <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">SQL Server</span>
-                        <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">MongoDB</span>
+                        <span class="px-3 py-2 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-lg text-sm font-medium hover:scale-110 transition-transform">MySQL</span>
+                        <span class="px-3 py-2 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-lg text-sm font-medium hover:scale-110 transition-transform">SQL Server</span>
+                        <span class="px-3 py-2 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-lg text-sm font-medium hover:scale-110 transition-transform">MongoDB</span>
                     </div>
                 </div>
 
                 <!-- Frontend -->
-                <div class="skill-card bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                    <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
-                        <i class="fas fa-paint-brush text-blue-600 dark:text-blue-400 mr-2"></i>
+                <div class="skill-card bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all border border-gray-200 dark:border-gray-700" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white flex items-center">
+                        <i class="fas fa-paint-brush text-blue-600 dark:text-blue-400 mr-3 text-2xl"></i>
                         Frontend (Exposure)
                     </h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-sm">Angular</span>
-                        <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-sm">Electron</span>
+                        <span class="px-3 py-2 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-lg text-sm font-medium hover:scale-110 transition-transform">Angular</span>
+                        <span class="px-3 py-2 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-lg text-sm font-medium hover:scale-110 transition-transform">Electron</span>
                     </div>
                 </div>
 
                 <!-- Testing -->
-                <div class="skill-card bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                    <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
-                        <i class="fas fa-vial text-blue-600 dark:text-blue-400 mr-2"></i>
+                <div class="skill-card bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all border border-gray-200 dark:border-gray-700" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white flex items-center">
+                        <i class="fas fa-vial text-blue-600 dark:text-blue-400 mr-3 text-2xl"></i>
                         Testing
                     </h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-full text-sm">JUnit 5</span>
-                        <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-full text-sm">Mockito</span>
+                        <span class="px-3 py-2 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-lg text-sm font-medium hover:scale-110 transition-transform">JUnit 5</span>
+                        <span class="px-3 py-2 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-lg text-sm font-medium hover:scale-110 transition-transform">Mockito</span>
                     </div>
                 </div>
 
                 <!-- Developer Tools -->
-                <div class="skill-card bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                    <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
-                        <i class="fas fa-laptop-code text-blue-600 dark:text-blue-400 mr-2"></i>
+                <div class="skill-card bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all border border-gray-200 dark:border-gray-700" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white flex items-center">
+                        <i class="fas fa-laptop-code text-blue-600 dark:text-blue-400 mr-3 text-2xl"></i>
                         Developer Tools
                     </h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full text-sm">IntelliJ IDEA</span>
-                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full text-sm">Visual Studio</span>
-                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full text-sm">VS Code</span>
-                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full text-sm">Postman</span>
-                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full text-sm">Git & GitHub</span>
+                        <span class="px-3 py-2 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-lg text-sm font-medium hover:scale-110 transition-transform">IntelliJ IDEA</span>
+                        <span class="px-3 py-2 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-lg text-sm font-medium hover:scale-110 transition-transform">Visual Studio</span>
+                        <span class="px-3 py-2 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-lg text-sm font-medium hover:scale-110 transition-transform">VS Code</span>
+                        <span class="px-3 py-2 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-lg text-sm font-medium hover:scale-110 transition-transform">Postman</span>
+                        <span class="px-3 py-2 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-lg text-sm font-medium hover:scale-110 transition-transform">Git & GitHub</span>
                     </div>
                 </div>
 
                 <!-- Deployment / Cloud -->
-                <div class="skill-card bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow sm:col-span-2 lg:col-span-1">
-                    <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
-                        <i class="fas fa-cloud text-blue-600 dark:text-blue-400 mr-2"></i>
+                <div class="skill-card bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all border border-gray-200 dark:border-gray-700 sm:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="400">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white flex items-center">
+                        <i class="fas fa-cloud text-blue-600 dark:text-blue-400 mr-3 text-2xl"></i>
                         Deployment / Cloud
                     </h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 rounded-full text-sm">Railway</span>
+                        <span class="px-3 py-2 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 rounded-lg text-sm font-medium hover:scale-110 transition-transform">Railway</span>
+                        <span class="px-3 py-2 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 rounded-lg text-sm font-medium hover:scale-110 transition-transform">Render</span>
                     </div>
                 </div>
             </div>
@@ -272,169 +347,269 @@
     <!-- Projects Section -->
     <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900">
         <div class="container mx-auto max-w-7xl">
-            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white">Projects</h2>
+            <h2 class="text-4xl sm:text-5xl font-bold text-center mb-4 text-gray-900 dark:text-white">
+                Featured <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Projects</span>
+            </h2>
+            <p class="text-center text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
+                Showcasing my best work in backend development and full-stack applications
+            </p>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <!-- Project 1 -->
-                <div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700">
+                <!-- Project 1: NextGen Task Tracker -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700 group" data-aos="fade-up">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">NextGen Task Tracker</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">
-                            Enterprise-grade task tracking system designed for internal use.
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-tasks text-white text-xl"></i>
+                            </div>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-xs font-semibold">Desktop App</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">NextGen Task Tracker</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm leading-relaxed">
+                            Enterprise-grade task tracking system designed for internal use with comprehensive backend APIs and secure authentication.
                         </p>
                         <ul class="text-sm text-gray-700 dark:text-gray-300 mb-4 space-y-2">
                             <li class="flex items-start">
-                                <i class="fas fa-check text-blue-600 dark:text-blue-400 mr-2 mt-1 text-xs"></i>
+                                <i class="fas fa-check-circle text-blue-600 dark:text-blue-400 mr-2 mt-1 text-xs"></i>
                                 <span>Backend APIs using ASP.NET Core and Entity Framework</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check text-blue-600 dark:text-blue-400 mr-2 mt-1 text-xs"></i>
+                                <i class="fas fa-check-circle text-blue-600 dark:text-blue-400 mr-2 mt-1 text-xs"></i>
                                 <span>JWT authentication and role-based authorization</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check text-blue-600 dark:text-blue-400 mr-2 mt-1 text-xs"></i>
-                                <span>SQL Server schema design</span>
+                                <i class="fas fa-check-circle text-blue-600 dark:text-blue-400 mr-2 mt-1 text-xs"></i>
+                                <span>SQL Server schema design for task management</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check text-blue-600 dark:text-blue-400 mr-2 mt-1 text-xs"></i>
-                                <span>Structured logging and exception handling</span>
+                                <i class="fas fa-check-circle text-blue-600 dark:text-blue-400 mr-2 mt-1 text-xs"></i>
+                                <span>Structured logging (NLog) and exception handling</span>
                             </li>
                         </ul>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">.NET</span>
-                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">C#</span>
-                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">Angular</span>
-                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">Electron</span>
-                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">SQL Server</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs font-medium">.NET</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs font-medium">C#</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs font-medium">Angular</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs font-medium">Electron</span>
+                            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs font-medium">SQL Server</span>
                         </div>
+                        <!-- <div class="flex gap-2">
+                            <a href="https://github.com/IndhuSreeVeerabahu" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center px-4 py-2 bg-gray-900 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors text-sm font-medium">
+                                <i class="fab fa-github mr-2"></i>GitHub
+                            </a>
+                        </div> -->
                     </div>
                 </div>
 
-                <!-- Project 2 -->
-                <div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700">
+                <!-- Project 2: Genie Task Tracker Sync -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700 group" data-aos="fade-up" data-aos-delay="100">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Genie Task Tracker Sync</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">
-                            Desktop app syncing Azure DevOps work items with internal Task Tracker.
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-sync-alt text-white text-xl"></i>
+                            </div>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-xs font-semibold">Desktop App</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">Genie Task Tracker Sync</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm leading-relaxed">
+                            Desktop application syncing Azure DevOps work items with internal Task Tracker using secure credential management.
                         </p>
                         <ul class="text-sm text-gray-700 dark:text-gray-300 mb-4 space-y-2">
                             <li class="flex items-start">
-                                <i class="fas fa-check text-blue-600 dark:text-blue-400 mr-2 mt-1 text-xs"></i>
-                                <span>Azure DevOps REST API integration</span>
+                                <i class="fas fa-check-circle text-purple-600 dark:text-purple-400 mr-2 mt-1 text-xs"></i>
+                                <span>Azure DevOps REST API and WIQL queries</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check text-blue-600 dark:text-blue-400 mr-2 mt-1 text-xs"></i>
-                                <span>SQLite database for local storage</span>
+                                <i class="fas fa-check-circle text-purple-600 dark:text-purple-400 mr-2 mt-1 text-xs"></i>
+                                <span>MySQL database for local storage</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check text-blue-600 dark:text-blue-400 mr-2 mt-1 text-xs"></i>
+                                <i class="fas fa-check-circle text-purple-600 dark:text-purple-400 mr-2 mt-1 text-xs"></i>
                                 <span>Credential encryption for secure PAT storage</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check text-blue-600 dark:text-blue-400 mr-2 mt-1 text-xs"></i>
-                                <span>Progress tracking and retry handling</span>
+                                <i class="fas fa-check-circle text-purple-600 dark:text-purple-400 mr-2 mt-1 text-xs"></i>
+                                <span>Progress tracking, retry handling, and responsive UI</span>
                             </li>
                         </ul>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded text-xs">Electron</span>
-                            <span class="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded text-xs">Angular</span>
-                            <span class="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded text-xs">TypeScript</span>
-                            <span class="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded text-xs">SQLite</span>
+                            <span class="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded text-xs font-medium">Electron</span>
+                            <span class="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded text-xs font-medium">Angular</span>
+                            <span class="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded text-xs font-medium">TypeScript</span>
+                            <span class="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded text-xs font-medium">SQLite</span>
                         </div>
+                        <!-- <div class="flex gap-2">
+                            <a href="https://github.com/IndhuSreeVeerabahu" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center px-4 py-2 bg-gray-900 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors text-sm font-medium">
+                                <i class="fab fa-github mr-2"></i>GitHub
+                            </a>
+                        </div> -->
                     </div>
                 </div>
 
-                <!-- Project 3 -->
-                <div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700">
+                <!-- Project 3: Learning Management System -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700 group" data-aos="fade-up" data-aos-delay="200">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Learning Management System</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">
-                            Role-based platform with Admin, Instructor, and Student workflows.
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-500 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-graduation-cap text-white text-xl"></i>
+                            </div>
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-xs font-semibold">Spring Boot</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">Learning Management System</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm leading-relaxed">
+                            Role-based platform with Admin, Instructor, and Student workflows for comprehensive course management.
                         </p>
                         <ul class="text-sm text-gray-700 dark:text-gray-300 mb-4 space-y-2">
                             <li class="flex items-start">
-                                <i class="fas fa-check text-blue-600 dark:text-blue-400 mr-2 mt-1 text-xs"></i>
-                                <span>Modular RESTful APIs for course management</span>
+                                <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2 mt-1 text-xs"></i>
+                                <span>Modular RESTful APIs for course and user management</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check text-blue-600 dark:text-blue-400 mr-2 mt-1 text-xs"></i>
+                                <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2 mt-1 text-xs"></i>
                                 <span>JWT-based authentication and access control</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check text-blue-600 dark:text-blue-400 mr-2 mt-1 text-xs"></i>
-                                <span>MySQL schema for courses and enrollments</span>
+                                <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2 mt-1 text-xs"></i>
+                                <span>MySQL schema for courses, enrollments, and progress</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check text-blue-600 dark:text-blue-400 mr-2 mt-1 text-xs"></i>
+                                <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2 mt-1 text-xs"></i>
                                 <span>Unit tests using JUnit and Mockito</span>
                             </li>
                         </ul>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-xs">Spring Boot</span>
-                            <span class="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-xs">MySQL</span>
-                            <span class="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-xs">JWT</span>
+                            <span class="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-xs font-medium">Spring Boot</span>
+                            <span class="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-xs font-medium">MySQL</span>
+                            <span class="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-xs font-medium">JWT</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="https://github.com/IndhuSreeVeerabahu/LearningManagementSystem.git" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center px-4 py-2 bg-gray-900 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors text-sm font-medium">
+                                <i class="fab fa-github mr-2"></i>GitHub
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 4 -->
-                <div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700">
+                <!-- Project 4: E-Commerce Application -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700 group" data-aos="fade-up" data-aos-delay="300">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">E-Commerce Application</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">
-                            End-to-end shopping platform with payment integration.
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-shopping-cart text-white text-xl"></i>
+                            </div>
+                            <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-full text-xs font-semibold">E-Commerce</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-yellow-600 dark:group-hover:text-yellow-400 transition-colors">E-Commerce Application</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm leading-relaxed">
+                            End-to-end shopping platform with secure payment integration and comprehensive order management.
                         </p>
                         <ul class="text-sm text-gray-700 dark:text-gray-300 mb-4 space-y-2">
                             <li class="flex items-start">
-                                <i class="fas fa-check text-blue-600 dark:text-blue-400 mr-2 mt-1 text-xs"></i>
+                                <i class="fas fa-check-circle text-yellow-600 dark:text-yellow-400 mr-2 mt-1 text-xs"></i>
                                 <span>Backend modules for products, cart, and orders</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check text-blue-600 dark:text-blue-400 mr-2 mt-1 text-xs"></i>
-                                <span>Razorpay integration for secure payments</span>
+                                <i class="fas fa-check-circle text-yellow-600 dark:text-yellow-400 mr-2 mt-1 text-xs"></i>
+                                <span>Cashfree integration for secure online payments</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check text-blue-600 dark:text-blue-400 mr-2 mt-1 text-xs"></i>
-                                <span>Order status management</span>
+                                <i class="fas fa-check-circle text-yellow-600 dark:text-yellow-400 mr-2 mt-1 text-xs"></i>
+                                <span>Order status management and tracking</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check text-blue-600 dark:text-blue-400 mr-2 mt-1 text-xs"></i>
-                                <span>Transaction validation</span>
+                                <i class="fas fa-check-circle text-yellow-600 dark:text-yellow-400 mr-2 mt-1 text-xs"></i>
+                                <span>Transaction validation and security</span>
                             </li>
                         </ul>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded text-xs">Spring Boot</span>
-                            <span class="px-2 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded text-xs">MySQL</span>
-                            <span class="px-2 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded text-xs">Razorpay</span>
+                            <span class="px-2 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded text-xs font-medium">Spring Boot</span>
+                            <span class="px-2 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded text-xs font-medium">MySQL</span>
+                            <span class="px-2 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded text-xs font-medium">Razorpay</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="https://github.com/IndhuSreeVeerabahu/EMartFinal.git" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center px-4 py-2 bg-gray-900 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors text-sm font-medium">
+                                <i class="fab fa-github mr-2"></i>GitHub
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 5 -->
-                <div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700">
+                <!-- Project 5: Movie Ticket Booking System -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700 group" data-aos="fade-up" data-aos-delay="400">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Movie Ticket Booking System</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">
-                            Web app for movie scheduling and seat booking.
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-r from-red-500 to-pink-500 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-film text-white text-xl"></i>
+                            </div>
+                            <span class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-full text-xs font-semibold">Booking System</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">Movie Ticket Booking System</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm leading-relaxed">
+                            Web application for movie scheduling and seat booking with real-time availability management.
                         </p>
                         <ul class="text-sm text-gray-700 dark:text-gray-300 mb-4 space-y-2">
                             <li class="flex items-start">
-                                <i class="fas fa-check text-blue-600 dark:text-blue-400 mr-2 mt-1 text-xs"></i>
-                                <span>APIs for movie listings and theaters</span>
+                                <i class="fas fa-check-circle text-red-600 dark:text-red-400 mr-2 mt-1 text-xs"></i>
+                                <span>APIs for movie listings, theaters, and reservations</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check text-blue-600 dark:text-blue-400 mr-2 mt-1 text-xs"></i>
+                                <i class="fas fa-check-circle text-red-600 dark:text-red-400 mr-2 mt-1 text-xs"></i>
                                 <span>Seat-locking mechanism to prevent double booking</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check text-blue-600 dark:text-blue-400 mr-2 mt-1 text-xs"></i>
-                                <span>Confirmation notifications</span>
+                                <i class="fas fa-check-circle text-red-600 dark:text-red-400 mr-2 mt-1 text-xs"></i>
+                                <span>Confirmation notifications upon successful booking</span>
                             </li>
                         </ul>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded text-xs">Spring Boot</span>
-                            <span class="px-2 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded text-xs">MySQL</span>
+                            <span class="px-2 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded text-xs font-medium">Spring Boot</span>
+                            <span class="px-2 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded text-xs font-medium">MySQL</span>
                         </div>
+                        <div class="flex gap-2">
+                            <a href="https://github.com/IndhuSreeVeerabahu/MovieBooking_IS.git" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center px-4 py-2 bg-gray-900 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors text-sm font-medium">
+                                <i class="fab fa-github mr-2"></i>GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: To-Do App -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700 group" data-aos="fade-up" data-aos-delay="500">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-list-check text-white text-xl"></i>
+                            </div>
+                            <span class="px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 rounded-full text-xs font-semibold">Learning</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">To-Do App</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm leading-relaxed">
+                            Simple, responsive task manager with CRUD functionality for learning and prototyping.
+                        </p>
+                        <ul class="text-sm text-gray-700 dark:text-gray-300 mb-4 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-indigo-600 dark:text-indigo-400 mr-2 mt-1 text-xs"></i>
+                                <span>Full CRUD operations for task management</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-indigo-600 dark:text-indigo-400 mr-2 mt-1 text-xs"></i>
+                                <span>Responsive design with modern UI</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-indigo-600 dark:text-indigo-400 mr-2 mt-1 text-xs"></i>
+                                <span>Clean code architecture for learning</span>
+                            </li>
+                        </ul>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 rounded text-xs font-medium">C#</span>
+                            <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 rounded text-xs font-medium">HTML</span>
+                            <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 rounded text-xs font-medium">CSS</span>
+                        </div>
+                        <!-- <div class="flex gap-2">
+                            <a href="https://github.com/IndhuSreeVeerabahu" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center px-4 py-2 bg-gray-900 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors text-sm font-medium">
+                                <i class="fab fa-github mr-2"></i>GitHub
+                            </a>
+                        </div> -->
                     </div>
                 </div>
 
@@ -443,36 +618,47 @@
     </section>
 
     <!-- Experience & Education Section -->
-    <section id="experience" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800">
+    <section id="experience" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900">
         <div class="container mx-auto max-w-6xl">
-            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white">Experience & Education</h2>
+            <h2 class="text-4xl sm:text-5xl font-bold text-center mb-4 text-gray-900 dark:text-white">
+                Experience & <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Education</span>
+            </h2>
+            <p class="text-center text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
+                My professional journey and educational background
+            </p>
             
             <!-- Professional Experience -->
-            <div class="mb-12">
-                <h3 class="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">Professional Experience</h3>
-                <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-6 border-l-4 border-blue-600">
+            <div class="mb-12" data-aos="fade-up">
+                <h3 class="text-2xl font-semibold mb-6 text-gray-900 dark:text-white flex items-center">
+                    <i class="fas fa-briefcase text-blue-600 dark:text-blue-400 mr-3"></i>
+                    Professional Experience
+                </h3>
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border-l-4 border-blue-600 hover:shadow-xl transition-shadow">
                     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-                        <h4 class="text-xl font-bold text-gray-900 dark:text-white">Software Developer</h4>
-                        <span class="text-gray-600 dark:text-gray-400 text-sm sm:mt-0 mt-2">
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white">Software Engineer</h4>
+                        <span class="text-gray-600 dark:text-gray-400 text-sm sm:mt-0 mt-2 flex items-center">
                             <i class="fas fa-calendar mr-2"></i>Oct 2023 – Present
                         </span>
                     </div>
-                    <p class="text-gray-700 dark:text-gray-300 font-medium mb-3">ClaySys Technologies, Coimbatore</p>
-                    <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                    <p class="text-gray-700 dark:text-gray-300 font-medium mb-4 flex items-center">
+                        <i class="fas fa-building text-blue-600 dark:text-blue-400 mr-2"></i>
+                        ClaySys Technologies, Coimbatore
+                    </p>
+                    <ul class="space-y-3 text-gray-600 dark:text-gray-400">
                         <li class="flex items-start">
-                            <i class="fas fa-arrow-right text-blue-600 dark:text-blue-400 mr-2 mt-1"></i>
+                            <i class="fas fa-arrow-right text-blue-600 dark:text-blue-400 mr-3 mt-1"></i>
                             <span>Led backend development for internal Electron-based task tracking applications.</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-arrow-right text-blue-600 dark:text-blue-400 mr-2 mt-1"></i>
+                            <i class="fas fa-arrow-right text-blue-600 dark:text-blue-400 mr-3 mt-1"></i>
                             <span>Worked with ASP.NET Core Web API, SQL Server, and JWT authentication.</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-arrow-right text-blue-600 dark:text-blue-400 mr-2 mt-1"></i>
+                            <i class="fas fa-arrow-right text-blue-600 dark:text-blue-400 mr-3 mt-1"></i>
                             <span>Improved reliability with structured logging and modular architecture.</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-arrow-right text-blue-600 dark:text-blue-400 mr-2 mt-1"></i>
+                            <i class="fas fa-arrow-right text-blue-600 dark:text-blue-400 mr-3 mt-1"></i>
                             <span>Collaborated with frontend developers for Electron-Angular integration.</span>
                         </li>
                     </ul>
@@ -480,36 +666,45 @@
             </div>
 
             <!-- Education -->
-            <div class="mb-12">
-                <h3 class="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">Education</h3>
-                <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-6 border-l-4 border-green-600">
+            <div class="mb-12" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="text-2xl font-semibold mb-6 text-gray-900 dark:text-white flex items-center">
+                    <i class="fas fa-graduation-cap text-green-600 dark:text-green-400 mr-3"></i>
+                    Education
+                </h3>
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border-l-4 border-green-600 hover:shadow-xl transition-shadow">
                     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
                         <h4 class="text-xl font-bold text-gray-900 dark:text-white">B.Tech – Biotechnology</h4>
-                        <span class="text-gray-600 dark:text-gray-400 text-sm sm:mt-0 mt-2">
+                        <span class="text-gray-600 dark:text-gray-400 text-sm sm:mt-0 mt-2 flex items-center">
                             <i class="fas fa-calendar mr-2"></i>2020–2024
                         </span>
                     </div>
-                    <p class="text-gray-700 dark:text-gray-300">Sri Shakthi Institute of Engineering & Technology, Coimbatore</p>
+                    <p class="text-gray-700 dark:text-gray-300 flex items-center">
+                        <i class="fas fa-university text-green-600 dark:text-green-400 mr-2"></i>
+                        Sri Shakthi Institute of Engineering & Technology, Coimbatore
+                    </p>
                 </div>
             </div>
 
             <!-- Certifications -->
-            <div>
-                <h3 class="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">Certifications</h3>
+            <div data-aos="fade-up" data-aos-delay="200">
+                <h3 class="text-2xl font-semibold mb-6 text-gray-900 dark:text-white flex items-center">
+                    <i class="fas fa-certificate text-yellow-600 dark:text-yellow-400 mr-3"></i>
+                    Certifications
+                </h3>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                    <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-6 border border-gray-200 dark:border-gray-700">
-                        <i class="fas fa-certificate text-blue-600 dark:text-blue-400 text-2xl mb-3"></i>
-                        <h4 class="font-semibold text-gray-900 dark:text-white">Java Full Stack Developer</h4>
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all transform hover:-translate-y-1">
+                        <i class="fas fa-certificate text-blue-600 dark:text-blue-400 text-3xl mb-3"></i>
+                        <h4 class="font-semibold text-gray-900 dark:text-white mb-1">Java Full Stack Developer</h4>
                         <p class="text-sm text-gray-600 dark:text-gray-400">GUVI</p>
                     </div>
-                    <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-6 border border-gray-200 dark:border-gray-700">
-                        <i class="fas fa-certificate text-blue-600 dark:text-blue-400 text-2xl mb-3"></i>
-                        <h4 class="font-semibold text-gray-900 dark:text-white">TCS iON Career Edge</h4>
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all transform hover:-translate-y-1">
+                        <i class="fas fa-certificate text-blue-600 dark:text-blue-400 text-3xl mb-3"></i>
+                        <h4 class="font-semibold text-gray-900 dark:text-white mb-1">TCS iON Career Edge</h4>
                         <p class="text-sm text-gray-600 dark:text-gray-400">Certification</p>
                     </div>
-                    <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-6 border border-gray-200 dark:border-gray-700 sm:col-span-2 lg:col-span-1">
-                        <i class="fas fa-certificate text-blue-600 dark:text-blue-400 text-2xl mb-3"></i>
-                        <h4 class="font-semibold text-gray-900 dark:text-white">Accenture Digital Skills</h4>
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all transform hover:-translate-y-1 sm:col-span-2 lg:col-span-1">
+                        <i class="fas fa-certificate text-blue-600 dark:text-blue-400 text-3xl mb-3"></i>
+                        <h4 class="font-semibold text-gray-900 dark:text-white mb-1">Accenture Digital Skills</h4>
                         <p class="text-sm text-gray-600 dark:text-gray-400">Certification</p>
                     </div>
                 </div>
@@ -520,50 +715,71 @@
     <!-- Contact Section -->
     <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900">
         <div class="container mx-auto max-w-4xl">
-            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white">Get In Touch</h2>
-            <div class="grid sm:grid-cols-2 gap-8">
-                <div class="contact-item bg-gray-50 dark:bg-gray-800 rounded-lg p-6 text-center hover:shadow-lg transition-shadow">
-                    <i class="fas fa-envelope text-3xl text-blue-600 dark:text-blue-400 mb-4"></i>
+            <h2 class="text-4xl sm:text-5xl font-bold text-center mb-4 text-gray-900 dark:text-white">
+                Get In <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Touch</span>
+            </h2>
+            <p class="text-center text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
+                Let's connect and discuss how we can work together
+            </p>
+            <div class="grid sm:grid-cols-2 gap-6">
+                <a href="mailto:indhusreev611@gmail.com" class="contact-item bg-gradient-to-br from-blue-50 to-blue-100 dark:from-gray-800 dark:to-gray-700 rounded-xl p-6 text-center hover:shadow-xl transition-all transform hover:-translate-y-2 border border-blue-200 dark:border-gray-700" data-aos="fade-up">
+                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-envelope text-2xl text-white"></i>
+                    </div>
                     <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Email</h3>
-                    <a href="mailto:indhusreev611@gmail.com" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    <p class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors break-all">
                         indhusreev611@gmail.com
+                    </p>
                     </a>
+                <a href="https://linkedin.com/in/indhusreev" target="_blank" rel="noopener noreferrer" class="contact-item bg-gradient-to-br from-blue-50 to-blue-100 dark:from-gray-800 dark:to-gray-700 rounded-xl p-6 text-center hover:shadow-xl transition-all transform hover:-translate-y-2 border border-blue-200 dark:border-gray-700" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fab fa-linkedin-in text-2xl text-white"></i>
                 </div>
-                <div class="contact-item bg-gray-50 dark:bg-gray-800 rounded-lg p-6 text-center hover:shadow-lg transition-shadow">
-                    <i class="fab fa-linkedin text-3xl text-blue-600 dark:text-blue-400 mb-4"></i>
                     <h3 class="font-semibold text-gray-900 dark:text-white mb-2">LinkedIn</h3>
-                    <a href="https://linkedin.com/in/indhusreev" target="_blank" rel="noopener noreferrer" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    <p class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                         linkedin.com/in/indhusreev
+                    </p>
                     </a>
+                <a href="https://github.com/IndhuSreeVeerabahu" target="_blank" rel="noopener noreferrer" class="contact-item bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 rounded-xl p-6 text-center hover:shadow-xl transition-all transform hover:-translate-y-2 border border-gray-200 dark:border-gray-700" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-gray-900 dark:bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fab fa-github text-2xl text-white"></i>
                 </div>
-                <div class="contact-item bg-gray-50 dark:bg-gray-800 rounded-lg p-6 text-center hover:shadow-lg transition-shadow">
-                    <i class="fab fa-github text-3xl text-blue-600 dark:text-blue-400 mb-4"></i>
                     <h3 class="font-semibold text-gray-900 dark:text-white mb-2">GitHub</h3>
-                    <a href="https://github.com/IndhuSreeVeerabahu" target="_blank" rel="noopener noreferrer" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    <p class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 transition-colors">
                         github.com/IndhuSreeVeerabahu
+                    </p>
                     </a>
+                <a href="tel:+918778293216" class="contact-item bg-gradient-to-br from-green-50 to-green-100 dark:from-gray-800 dark:to-gray-700 rounded-xl p-6 text-center hover:shadow-xl transition-all transform hover:-translate-y-2 border border-green-200 dark:border-gray-700" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-phone text-2xl text-white"></i>
                 </div>
-                <div class="contact-item bg-gray-50 dark:bg-gray-800 rounded-lg p-6 text-center hover:shadow-lg transition-shadow">
-                    <i class="fas fa-phone text-3xl text-blue-600 dark:text-blue-400 mb-4"></i>
                     <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Phone</h3>
-                    <a href="tel:+918778293216" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    <p class="text-gray-600 dark:text-gray-400 hover:text-green-600 dark:hover:text-green-400 transition-colors">
                         +91 8778293216
+                    </p>
                     </a>
-                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 dark:bg-black text-gray-300 py-8 text-center">
+    <footer class="bg-gray-900 dark:bg-black text-gray-300 py-8 text-center border-t border-gray-800">
         <div class="container mx-auto px-4">
             <p class="text-sm">&copy; 2024 Indhu Sree Veerabahu. All rights reserved.</p>
-            <p class="text-xs mt-2 text-gray-500">Built with HTML, CSS, JavaScript & TailwindCSS</p>
+            <p class="text-xs mt-2 text-gray-500">Built with <i class="fas fa-heart text-red-500"></i> using HTML, CSS, JavaScript & TailwindCSS</p>
         </div>
     </footer>
 
     <!-- JavaScript -->
     <script src="script.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+    </script>
 </body>
 </html>
-

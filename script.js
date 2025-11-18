@@ -55,20 +55,43 @@ function typeText() {
 }
 
 // Dark Mode Toggle
-const themeToggle = document.getElementById('theme-toggle');
-const htmlElement = document.documentElement;
+let darkModeInitialized = false;
 
-// Check for saved theme preference or default to light mode
-const currentTheme = localStorage.getItem('theme') || 'light';
-if (currentTheme === 'dark') {
-    htmlElement.classList.add('dark');
+function initDarkMode() {
+    if (darkModeInitialized) return;
+    
+    const themeToggle = document.getElementById('theme-toggle');
+    const htmlElement = document.documentElement;
+
+    if (!htmlElement) return;
+
+    // Check for saved theme preference or default to light mode
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    if (currentTheme === 'dark') {
+        htmlElement.classList.add('dark');
+    } else {
+        htmlElement.classList.remove('dark');
+    }
+
+    if (themeToggle && !darkModeInitialized) {
+        themeToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            htmlElement.classList.toggle('dark');
+            const theme = htmlElement.classList.contains('dark') ? 'dark' : 'light';
+            localStorage.setItem('theme', theme);
+        });
+        darkModeInitialized = true;
+    }
 }
 
-themeToggle?.addEventListener('click', () => {
-    htmlElement.classList.toggle('dark');
-    const theme = htmlElement.classList.contains('dark') ? 'dark' : 'light';
-    localStorage.setItem('theme', theme);
-});
+// Initialize dark mode when DOM is ready
+document.addEventListener('DOMContentLoaded', initDarkMode);
+// Also run immediately if DOM is already loaded
+if (document.readyState !== 'loading') {
+    initDarkMode();
+}
 
 // Smooth Scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
